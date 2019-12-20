@@ -14,6 +14,8 @@ class Pdf
 
     protected $options = [];
 
+    protected $timeout = FALSE;
+
     public function __construct(string $binPath = null)
     {
         $this->binPath = $binPath ?? '/usr/bin/pdftotext';
@@ -65,9 +67,20 @@ class Pdf
         return array_reduce(array_map($mapper, $options), $reducer, []);
     }
 
+    public function setTimeout($timeout){
+        $this->timeout = $timeout;
+
+        return $this;
+    }
+
     public function text() : string
     {
         $process = new Process(array_merge([$this->binPath], $this->options, [$this->pdf, '-']));
+
+        if($this->timeout){
+            $process->setTimeout($this->timeout);
+        }
+
         $process->run();
         if (!$process->isSuccessful()) {
             throw new CouldNotExtractText($process);
