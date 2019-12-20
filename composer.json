@@ -1,17 +1,17 @@
 {
-    "name": "spatie/pdf-to-text",
+    "name": "raulmontano/pdf-to-text",
     "description": "Extract text from a pdf",
     "keywords": [
         "spatie",
         "pdf-to-text"
     ],
-    "homepage": "https://github.com/spatie/pdf-to-text",
+    "homepage": "https://github.com/raulmontano/pdf-to-text",
     "license": "MIT",
     "authors": [
         {
-            "name": "Freek Van der Herten",
-            "email": "freek@spatie.be",
-            "homepage": "https://spatie.be",
+            "name": "Raul Montano",
+            "email": "rmontano.jegra@gmail.com",
+            "homepage": "http://jegra.com.mx",
             "role": "Developer"
         }
     ],
